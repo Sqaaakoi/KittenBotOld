@@ -1,0 +1,15 @@
+{
+  "name": "sqaaakoi-the-kitten-bot",
+  "version": "1.0.0",
+  "description": "Sqaaakoi the Kitten bot",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo Test"
+  },
+  "author": "Sqaaakoi",
+  "license": "?",
+  "dependencies": {
+    "discord.js": "^11.3.0",
+    "npm": "^5.7.1"
+  }
+}
