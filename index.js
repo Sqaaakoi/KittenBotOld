@@ -35,7 +35,7 @@ client.on("message", async message => {
            });
   }}
 
-  if(message.content.startsWith("<@${client.user.id}>")) {
+  if(message.content.startsWith("<@!${client.user.id}>")) {
     if(message.content.length <= 23) {
 message.channel.send({embed: {
         "color": 1146986,
