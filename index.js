@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const token = 'NDE0OTc4MDQwODc2MjM2ODAw.DWvN-w.Ntr09qDPzojWi7EwtRpHb-2WW7U';
+const token = require("./token.ini");
 
 
 client.on('ready', () => {
@@ -18,7 +18,7 @@ client.on("message", async message => {
 
   if(message.author.bot) return;
 
-  if(message.content.startsWith("<@414978040876236800>")) {
+  if(message.content.startsWith("<@${client.user.id}>")) {
       if(message.content.length <= 22) {
   message.channel.send({embed: {
           "color": 1146986,
@@ -35,7 +35,7 @@ client.on("message", async message => {
            });
   }}
 
-  if(message.content.startsWith("<@!414978040876236800>")) {
+  if(message.content.startsWith("<@${client.user.id}>")) {
     if(message.content.length <= 23) {
 message.channel.send({embed: {
         "color": 1146986,
@@ -53,7 +53,7 @@ message.channel.send({embed: {
   }}
 
 
-if(message.content.startsWith("<@414978040876236800>")) {
+if(message.content.startsWith("<@${client.user.id}>")) {
     if(message.content.length >= 23) {
 const args = message.content.slice(`21`).trim().split(/ +/g);
 let saysend = args.join(" ");
@@ -69,7 +69,7 @@ message.delete().catch();
 message.channel.send(saysend);
 }}
 
-if(message.content.startsWith("invite-<@414978040876236800>")) {
+if(message.content.startsWith("invite-<@${client.user.id}>")) {
       if(message.channel.type !== `dm`) {
           message.channel.send(`:mailbox_with_mail: Invite link sent to DM!`)
         }
@@ -77,7 +77,7 @@ if(message.content.startsWith("invite-<@414978040876236800>")) {
           "color": 2067276,
           "fields": [{
               "name": `Invite me!`,
-              "value": `[Click here to invite me to your server!](https://discordapp.com/oauth2/authorize?client_id=414978040876236800&permissions=93192&scope=bot)`,
+              "value": `[Click here to invite me to your server!](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&permissions=93192&scope=bot)`,
        },
           ],
           "footer": {
@@ -89,7 +89,7 @@ if(message.content.startsWith("invite-<@414978040876236800>")) {
 console.log('Invite');
  }
 
-if(message.content.startsWith("invite-<@!414978040876236800>")) {
+if(message.content.startsWith("invite-<@!${client.user.id}>")) {
   if(message.channel.type !== `dm`) {
       message.channel.send(`:mailbox_with_mail: Invite link sent to DM!`)
     }
@@ -97,7 +97,7 @@ if(message.content.startsWith("invite-<@!414978040876236800>")) {
          "color": 2067276,
          "fields": [{
              "name": `Invite me!`,
-             "value": `[Click here to invite me to your server!](https://discordapp.com/oauth2/authorize?client_id=414978040876236800&permissions=93192&scope=bot)`,
+             "value": `[Click here to invite me to your server!](https://discordapp.com/oauth2/authorize?client_id=${client.user.id}&permissions=93192&scope=bot)`,
       },
          ],
          "footer": {
@@ -111,4 +111,4 @@ console.log('Invite');
 
 })
 
-client.login(token);
+client.login(token.token);
