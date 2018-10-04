@@ -1,10 +1,10 @@
-# SqaaakoiKittenBot
+# KittenBot
 
 Requires: Node.js
 
 Setup: 
 
-1: Edit token.ini and replace "Insert token here" with a bot token from [here](https://discordapp.com/developers/applications/me/).
+1: Edit token.json and replace "Insert token here" with a bot token from [here](https://discordapp.com/developers/applications/me/).
 
 2: Run "npm install --save discord.js"
 
